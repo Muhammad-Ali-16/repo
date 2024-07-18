@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar';
 import ReactStates from './Components/ReactStates';
 import ReactNestedStates from './Components/ReactNestedStates';
@@ -42,26 +42,30 @@ export default function App() {
   }
 
   return (
-
-    <BrowserRouter>
+<div>
+    // <BrowserRouter>
       <Navbar NavBg={themeMode.background} color={themeMode.color} ModeTxt={themeMode.modeTxt} BtnClickHandle={BtnClickHandle} />
 
       <div className="container my-5">
-        <Routes>
-          <Route path="/ReactNestedStates" element={<ReactNestedStates color={themeMode.color} background={themeMode.background} />} />
-
-          <Route path="/ReactProps" element={<>
+        // <Routes>
+          // <Route path="/ReactNestedStates" element={} />
+        <ReactNestedStates color={themeMode.color} background={themeMode.background} />
+  
+          // <Route path="/ReactProps" element={
+  
             <div className='row'>
               <ReactProps color={themeMode.color} background={themeMode.background} Title="Pakistan" />
               <ReactProps color={themeMode.color} background={themeMode.background} Title="Australia" />
               <ReactProps color={themeMode.color} background={themeMode.background} Title="England" />
-            </div></>} />
+             </div>
+  // } />
 
-          <Route path="/" element={<ReactStates color={themeMode.color} txtAreaBg={themeMode.txtAreaBg} />} />
-        </Routes>
+  <ReactStates color={themeMode.color} txtAreaBg={themeMode.txtAreaBg} />
+        //   <Route path="/" element={} />
+        // </Routes>
 
         </div>
-    </BrowserRouter>
-
+    // </BrowserRouter>
+  </div>
   );
 }
