@@ -47,5 +47,15 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
+    <script>
+  const redirectToIndex = () => {
+    if (window.location.pathname.length > 1) {
+      const path = window.location.pathname;
+      window.location.replace(`${window.location.origin}/#${path}`);
+    }
+  };
+  redirectToIndex();
+</script>
+
   </body>
 </html>
